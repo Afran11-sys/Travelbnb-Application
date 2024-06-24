@@ -24,7 +24,7 @@ public class UserController {
     }
 
 
-    @PostMapping
+    @PostMapping("/createUser")
     public ResponseEntity<?> createUser(
             @RequestBody AppUser user
     ){

@@ -26,6 +26,16 @@ public class AppUser {
     @Column(name = "password", nullable = false, length = 200)
     private String password;
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    private String role;
+
     public String getPassword() {
         return password;
     }

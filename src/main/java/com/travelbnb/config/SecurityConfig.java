@@ -19,7 +19,13 @@ public class SecurityConfig {
 
         http.csrf().disable().cors().disable();
         http.addFilterBefore(jwtRequestFilter, AuthorizationFilter.class);
-        http.authorizeHttpRequests().anyRequest().permitAll();
+       http.authorizeHttpRequests().anyRequest().permitAll();
+//        http.authorizeHttpRequests()  // Use authorizeRequests instead of authorizeHttpRequests
+//                .requestMatchers("/api/v1/users/login", "/api/v1/users/createUser").permitAll()
+//                .requestMatchers("/api/v1/countries/addCountry").hasRole("ADMIN")
+//                .requestMatchers("/api/v1/photos/upload").hasAnyRole("ADMIN","USER")
+//                .anyRequest().authenticated();
+
         return http.build();
     }
 }
